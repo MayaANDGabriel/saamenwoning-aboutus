@@ -34,16 +34,30 @@
             padding: 0 10px;
             background-color: #c9c4d1;
         }
+
+  
+        /* Ensure the centered grid uses flexbox to align items to the middle */
         .centered-grid {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Ensures it still looks good on mobile */
+            justify-content: center; /* This centers the items horizontally */
+            flex-wrap: wrap; 
+            gap: 10px;
+            padding: 0 10px;
         }
-
-.centered-grid .bottom-item {
-    width: calc(33.33% - 10px); /* Keeps the size consistent with the 3-column grid */
-    min-width: 250px; /* Prevents them from getting too tiny */
-}
+        
+        /* Maintain the consistent sizing for the items inside the centered grid */
+        .centered-grid .bottom-item {
+            flex: 0 1 calc(33.33% - 10px); /* This forces them to be the same width as the 3-column grid */
+            min-width: 250px; 
+            aspect-ratio: 1 / 1;
+        }
+        
+        /* Responsive adjustment for mobile */
+        @media (max-width: 768px) {
+            .centered-grid .bottom-item {
+                flex: 0 1 100%; /* Stacks them on small screens */
+            }
+        }
         
         .grid-item { aspect-ratio: 3 / 4; overflow: hidden; }
         .grid-item img { width: 100%; height: 100%; object-fit: cover; }
