@@ -44,11 +44,11 @@
         /* Bottom Duo Grids */
         .bottom-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            max-width: 1200px;
-            margin: 0 auto 60px auto;
-            padding: 0 20px;
+            grid-template-columns: repeat(3, 1fr); /* Changed from 1fr 1fr to 3 columns */
+            gap: 10px; /* Matched the gap of the top grid */
+            max-width: 100%; /* Allows it to span the full width like the other grid */
+            margin: 0 auto 20px auto;
+            padding: 0 10px; /* Matched padding of grid-container */
         }
         .bottom-item { aspect-ratio: 1 / 1; overflow: hidden; background-color: #ddd; }
         .bottom-item img { width: 100%; height: 100%; object-fit: cover; }
